@@ -26,7 +26,7 @@ use PHPMailer\PHPMailer\Exception;
             <br><br>
             Best regards,<br>
             Lance Cunanan <br>
-            <strong>Lolo Caldos Farmville Resort.</strong>
+            <strong></b>Lolo Caldos Farmville Resort.</strong>
 
             <br><br>
         </body>
