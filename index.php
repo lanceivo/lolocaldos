@@ -115,7 +115,7 @@
     <section class="section3" id="section3">
         <div>
             <h1> This is for Blogs</h1>
-            <h1> gsgsagsg</h1>
+           
         </div>
     </section>
         <section class="section4" id="section4">

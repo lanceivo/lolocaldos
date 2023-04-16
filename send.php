@@ -7,19 +7,32 @@ use PHPMailer\PHPMailer\Exception;
     require 'phpmailer/src/SMTP.php';
 
     if(isset($_POST["send"])){
-        $mail = new PHPMailer(true);
-        session_start();
-
         $email = $_POST["email"];
-        $msg = $_POST["message"];
         $name = $_POST["name"];
         $subject = $_POST["subject"];
+        // $msg = $_POST["message"];
 
-        $_SESSION['name'] =$name;
-        $_SESSION['subject'] = $subject;
-        $_SESSION['email'] = $email;
-        $_SESSION['message'] = $msg;
-       
+        $msg = '
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+        </head>
+        <body>
+            <p> Dear <strong> ' .$name . ' !</strong></p>
+            <p>Thank you for your interest in our business resort! We are here to answer any questions you have about our facilities and services. 
+                <br>If you have any suggestions on how we can improve, we would love to hear from you. Looking forward to hearing back from you soon.
+            </p>
+            <br><br>
+            Best regards,<br>
+            Lance Cunanan <br>
+            <strong>Lolo Caldos Farmville Resort.</strong>
+
+            <br><br>
+        </body>
+        </html>
+        ';
+        $mail = new PHPMailer(true);
         $mail -> isSMTP();
         $mail ->Host = 'smtp.gmail.com';
         $mail -> SMTPAuth = true;
@@ -28,25 +41,16 @@ use PHPMailer\PHPMailer\Exception;
         $mail -> SMTPSecure ='ssl';
         $mail -> Port = 465;
 
-        $mail-> setFrom('samsonlance1@gmail.com');
-
-        $mail ->addAddress('samsonlance1@gmail.com');
+        $mail-> setFrom('samsonlance1@gmail.com', 'Lolo Caldos Farmville Resort');
+        
+        $mail ->addAddress($email);
 
         $mail -> isHTML(true);
 
-        $mail ->Subject = $_POST["email"];
-        $mail -> Body = $_POST["message"];
+        $mail ->Subject = $subject;
+        $mail -> Body = $msg;
 
         $mail ->send();
-        
-        echo
-        "
-        <script>
-        Alert('Send Successfully');
-        document.location.href = 'index.php';
-        </script>
-
-        ";
-        header('location:receive.php');
+        header('location:index.php');    
     }
 ?>
