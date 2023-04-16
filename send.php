@@ -24,7 +24,7 @@ use PHPMailer\PHPMailer\Exception;
                 <br>If you have any suggestions on how we can improve, we would love to hear from you. Looking forward to hearing back from you soon.
             </p>
             <br><br>
-            Best regards,<br>
+            Have the day you deserve,<br>
             Lance Cunanan <br>
             <strong></b>Lolo Caldos Farmville Resort.</strong>
 
@@ -34,14 +34,14 @@ use PHPMailer\PHPMailer\Exception;
         ';
         $mail = new PHPMailer(true);
         $mail -> isSMTP();
-        $mail ->Host = 'smtp.gmail.com';
+        $mail ->Host = 'smtp.hostinger.com';
         $mail -> SMTPAuth = true;
-        $mail -> Username = 'samsonlance1@gmail.com';
-        $mail -> Password = 'tywnlftvwpvcjmjl';
-        $mail -> SMTPSecure ='ssl';
-        $mail -> Port = 465;
+        $mail -> Username = 'contact@lolocaldos.tech';
+        $mail -> Password = 'Lance@15';
+        $mail -> SMTPSecure ='tls';
+        $mail -> Port = 587;
 
-        $mail-> setFrom('samsonlance1@gmail.com', 'Lolo Caldos Farmville Resort');
+        $mail-> setFrom('contact@lolocaldos.tech', 'Lolo Caldos Farmville Resort');
         
         $mail ->addAddress($email);
 
