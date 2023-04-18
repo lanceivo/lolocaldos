@@ -28,7 +28,7 @@
                 
                 $message= "<p><b style='font-size: 30px;'>Carpool App</b><hr><br>Good day, <b> $fn  $ln </b>
                 you only have one step to use the app, Click the link below to finalize the Carpool App Registration.
-                <a href='https://carpool.lolocaldos.tech/Registeredlist.php'><br>Verifying Email Address</a>";
+                <a href='https://carpool.lolocaldos.tech/Registeredlist.php?token=$Confirmed'><br>Verifying Email Address</a>";
                 $mail->Body = $message;
                 $mail->send();
                 // echo 'Message has been sent';
