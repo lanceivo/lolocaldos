@@ -12,7 +12,7 @@
                 $mail = new PHPMailer(true);
                 // $mail->SMTPDebug = SMTP::DEBUG_OFF; 
                 $mail->isSMTP();                                           
-                $mail->Host = 'smtp.gmail.com';                     
+                $mail->Host = 'smtp.hostinger.com';                     
                 $mail->SMTPAuth = true;      
                                             
                 $mail->Username = 'contact@lolocaldos.tech';                   
