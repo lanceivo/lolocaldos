@@ -52,7 +52,7 @@
         if(mysqli_num_rows($email_exist_run) > 0){
 
             echo "Email already Exist";
-            header('Location:index.html');
+           
         }else{
             // Insert User /
             $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname,Contactnum,Email,Password,approved) VALUES ('$fn','$mn','$ln','$contact','$email','$password', 'Registered')";
