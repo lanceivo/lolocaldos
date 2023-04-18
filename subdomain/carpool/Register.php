@@ -15,7 +15,7 @@
                 $mail->Host = 'smtp.hostinger.com';                     
                 $mail->SMTPAuth = true;      
                                             
-                $mail->Username = 'contact@lolocaldos.tech';                   
+                $mail->Username = 'carpool.lolocaldos.tech';                   
                 $mail->Password = 'lance@15';                             
                 $mail->SMTPSecure = "tls";           
                 $mail->Port = 587;                                    
