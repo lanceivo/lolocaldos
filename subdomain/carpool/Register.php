@@ -21,7 +21,7 @@
                 $mail->Port = 587;                                    
                 //Recipients    
 
-                $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
+                $mail->setFrom('carpool.lolocaldos.tech', 'User Registration Carpool');
                 $mail->addAddress($email);     
                 $mail->isHTML(true); 
                 $mail->Subject = 'Email verification';
