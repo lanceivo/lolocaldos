@@ -16,7 +16,7 @@
                 $mail->SMTPAuth = true;      
                                             
                 $mail->Username = 'carpool@lolocaldos.tech';                   
-                $mail->Password = 'lance@15';                              
+                $mail->Password = 'Lance@15';                              
                 $mail->SMTPSecure = "tls";           
                 $mail->Port = 587;                                    
                 //Recipients    
