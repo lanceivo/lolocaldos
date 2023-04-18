@@ -28,7 +28,7 @@
                 
                 $message= "<p><b style='font-size: 30px;'>Carpool App</b><hr><br>Good day, <b> $fn  $ln </b>
                 you only have one step to use the app, Click the link below to finalize the Carpool App Registration.
-                <a href='http://localhost/carpooling/verify-email.php?token=$Confirmed'><br>Verifying Email Address</a>";
+                <a href='http://carpooling/verify-email.php?token=$Confirmed'><br>Verifying Email Address</a>";
                 $mail->Body = $message;
                 $mail->send();
                 // echo 'Message has been sent';
@@ -52,7 +52,7 @@
         if(mysqli_num_rows($email_exist_run) > 0){
 
             echo "Email already Exist";
-           
+            header('Location:index.html');
         }else{
             // Insert User /
             $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname,Contactnum,Email,Password,approved) VALUES ('$fn','$mn','$ln','$contact','$email','$password', 'Registered')";
