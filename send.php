@@ -36,12 +36,12 @@ use PHPMailer\PHPMailer\Exception;
         $mail -> isSMTP();
         $mail ->Host = 'smtp.hostinger.com';
         $mail -> SMTPAuth = true;
-        $mail -> Username = 'carpool@lolocaldos.tech';
+        $mail -> Username = 'contact@lolocaldos.tech';
         $mail -> Password = 'Lance@15';
         $mail -> SMTPSecure ='tls';
         $mail -> Port = 587;
 
-        $mail-> setFrom('carpool@lolocaldos.tech', 'Lolo Caldos Farmville Resort');
+        $mail-> setFrom('contact@lolocaldos.tech', 'Lolo Caldos Farmville Resort');
         
         $mail ->addAddress($email);
 
