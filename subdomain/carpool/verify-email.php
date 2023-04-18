@@ -8,7 +8,7 @@
 </head>
 <body>
     <center>
-            <h1> YOUR ACCOUNT IS RESISTERED, BITCH!!!</h1>
+            <h1> YOUR ACCOUNT IS RESISTERED!!!</h1>
             <button><a href="Registeredlist.php"> GO TO REGISTERED LIST </a></button>   
     </center>
 </body>
