@@ -8,20 +8,18 @@
    require 'phpmailer/src/Exception.php';
    require 'phpmailer/src/PHPMailer.php';
    require 'phpmailer/src/SMTP.php';
-  
-   if(isset($_POST['send'])){
-        function sendemail_verify($fn,$ln,$email,$Confirmed){
-        $mail = new PHPMailer(true);
-        // $mail->SMTPDebug = SMTP::DEBUG_OFF; 
-        $mail->isSMTP();                                           
-        $mail->Host = 'smtp.hostinger.com';                     
-        $mail->SMTPAuth = true;      
-                                    
-        $mail->Username = 'contact@lolocaldos.tech';                   
-        $mail->Password = 'lance@15';                              
-        $mail->SMTPSecure = "tls";           
-        $mail->Port = 587;                                    
-        //Recipients    
+   function sendemail_verify($fn,$ln,$email,$Confirmed){
+                $mail = new PHPMailer(true);
+                // $mail->SMTPDebug = SMTP::DEBUG_OFF; 
+                $mail->isSMTP();                                           
+                $mail->Host = 'smtp.hostinger.com';                     
+                $mail->SMTPAuth = true;      
+                                            
+                $mail->Username = 'contact@lolocaldos.tech';                   
+                $mail->Password = 'Lance';                              
+                $mail->SMTPSecure = "tls";           
+                $mail->Port = 587;                                    
+                //Recipients    
 
         $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
         $mail->addAddress($email);     
