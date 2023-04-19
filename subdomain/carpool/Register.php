@@ -8,33 +8,33 @@
    require 'phpmailer/src/Exception.php';
    require 'phpmailer/src/PHPMailer.php';
    require 'phpmailer/src/SMTP.php';
-   function sendemail_verify($fn,$ln,$email,$Confirmed){
-                $mail = new PHPMailer(true);
-                // $mail->SMTPDebug = SMTP::DEBUG_OFF; 
-                $mail->isSMTP();                                           
-                $mail->Host = 'smtp.hostinger.com';                     
-                $mail->SMTPAuth = true;      
-                                            
-                $mail->Username = 'contact@lolocaldos.tech';                   
-                $mail->Password = 'Lance';                              
-                $mail->SMTPSecure = "tls";           
-                $mail->Port = 587;                                    
-                //Recipients    
-
-                $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
-                $mail->addAddress($email);     
-                $mail->isHTML(true); 
-                $mail->Subject = 'Email verification';
-                
-                $message= "<p><b style='font-size: 30px;'>Carpool App</b><hr><br>Good day, <b> $fn  $ln </b>
-                you only have one step to use the app, Click the link below to finalize the Carpool App Registration.
-                <a href='https://carpool.lolocaldos.tech/Registeredlist.php?token=$Confirmed'><br>Verifying Email Address</a>";
-                $mail->Body = $message;
-                $mail->send();
-                // echo 'Message has been sent';
-   }
+  
    if(isset($_POST['send'])){
+    function sendemail_verify($fn,$ln,$email,$Confirmed){
+        $mail = new PHPMailer(true);
+        // $mail->SMTPDebug = SMTP::DEBUG_OFF; 
+        $mail->isSMTP();                                           
+        $mail->Host = 'smtp.hostinger.com';                     
+        $mail->SMTPAuth = true;      
+                                    
+        $mail->Username = 'contact@lolocaldos.tech';                   
+        $mail->Password = 'lance@15';                              
+        $mail->SMTPSecure = "tls";           
+        $mail->Port = 587;                                    
+        //Recipients    
 
+        $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
+        $mail->addAddress($email);     
+        $mail->isHTML(true); 
+        $mail->Subject = 'Email verification';
+        
+        $message= "<p><b style='font-size: 30px;'>Carpool App</b><hr><br>Good day, <b> $fn  $ln </b>
+        you only have one step to use the app, Click the link below to finalize the Carpool App Registration.
+        <a href='https://carpool.lolocaldos.tech/Registeredlist.php?token=$Confirmed'><br>Verifying Email Address</a>";
+        $mail->Body = $message;
+        $mail->send();
+        // echo 'Message has been sent';
+}
         //GET THE DATA FROM THE FORM
         require 'connection.php';
         $fn = $_POST['Firstname'];
@@ -52,7 +52,7 @@
         if(mysqli_num_rows($email_exist_run) > 0){
 
             echo "Email already Exist";
-            header('Location:index.html');
+             header('Location:index.html');
         }else{
             // Insert User /
             $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname,Contactnum,Email,Password,approved) VALUES ('$fn','$mn','$ln','$contact','$email','$password', 'Registered')";
