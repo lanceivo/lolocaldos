@@ -16,7 +16,7 @@
                 $mail->SMTPAuth = true;      
                                             
                 $mail->Username = 'contact@lolocaldos.tech';                   
-                $mail->Password = 'lance@15';                              
+                $mail->Password = 'Lance';                              
                 $mail->SMTPSecure = "tls";           
                 $mail->Port = 587;                                    
                 //Recipients    
