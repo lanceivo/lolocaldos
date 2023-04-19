@@ -10,7 +10,7 @@
    require 'phpmailer/src/SMTP.php';
   
    if(isset($_POST['send'])){
-    function sendemail_verify($fn,$ln,$email,$Confirmed){
+         function sendemail_verify($fn,$ln,$email,$Confirmed){
         $mail = new PHPMailer(true);
         // $mail->SMTPDebug = SMTP::DEBUG_OFF; 
         $mail->isSMTP();                                           
@@ -33,7 +33,7 @@
         <a href='https://carpool.lolocaldos.tech/Registeredlist.php?token=$Confirmed'><br>Verifying Email Address</a>";
         $mail->Body = $message;
         $mail->send();
-        // echo 'Message has been sent';
+        
 }
         //GET THE DATA FROM THE FORM
         require 'connection.php';
