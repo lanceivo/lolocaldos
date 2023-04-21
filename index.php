@@ -10,66 +10,41 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style-2.css"> 
+    <link rel="stylesheet" href="css/nav.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
 </head>
-<body>
-   <nav class="navbar-one flex">
-    <div class="leftt flex">
-        <div> <a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT"class="twitter">
-            <i class="fab fa-twitter"></i>
-            </a>
-        </div>
-       <div>
-        <a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT" class="facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
-       </div> 
-        <div> 
-            <a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT" class="instagram">
-            <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-        <div> <a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT"class="tiktok">
-            <i class="fab fa-tiktok"></i>
-            </a>
-        </div>
-       
-    </div>
-        <div class="right flex">
-            <div class="email">
-                <i class="fa fa-envelope"></i>
-                <span> CONTACT US</span>
-            </div>
-            <div class="call">
-                <i class="fa fa-phone"></i>
-                <span>09123456789</span>
-            </div>
-            
-        </div>
-       
-   </nav>
-   <nav class="navbar-second flex2">
-        <div class="logo">
-            <h4>Caldos Resort</h1>
-        </div>
-        <ul class="flex2">
-            <li><a href="#section1">Home</a></li>
-            <li><a href="#section2">Services</a></li>
-            <li><a href="#section3">Blog</a></li>
-            <li><a href="#section4">About</a></li>
-            <li><a href="#contact">Feedback</a></li>
-        </ul>
-   </nav>
+<body class="homepage is-preload">
+		<div id="page-wrapper">
+			<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="current"><a href="#section1">Home</a></li>
+						<li>
+							<a href="#section2">Services</a>
+							<ul>
+								<li><a href="#section2">For Swimming</a></li>
+								<li><a href="#section2">For Tent and Gazeebo</a></li>
+								<li><a href="#section2">For Rooms</a></li>
+								<li><a href="#section2">For Private Pool feugiat</a></li>
+                                <li><a href="#section2">For All Occassions</a></li>
+							</ul>
+						</li>
+						<li><a href="#section3">Blogs</a></li>
+						<li><a href="#section4">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+		</div>
         <section id="section1">
-            
+            <div>      
+            </div>
         </section>
         <section class="teams" id="section2">
         <div class="max-width">
-
                 <div class="max-width">
                     <h2 class="title">S E R V I C E S</h2>
                     <div class="carousel owl-carousel">
@@ -176,6 +151,14 @@
             </div>
         </div>
     </section>    
-    <script src="script.js"></script>
+    <!-- Scripts -->
+            <script src="js/script.js"></script>
+			 <!-- <script src="js/jquery.min.js"></script> -->
+			<script src="js/jquery.dropotron.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script> 
 </body>
 </html>
