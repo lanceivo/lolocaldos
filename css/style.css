@@ -66,12 +66,16 @@ img {
 	margin: 0;
 	padding-left: 1px;
 	text-align: center;
+    transition: background-color 0.3s ease-in-out; /* Add transition effect */
+}
+#navigation li:hover,
+#navigation li.active {
+	background-color: #ffb744; /* Change background color when hovered or active */
 }
 #navigation li:first-child {
 	background: none;
 	margin-left: 0;
 	padding-left: 0;
-    
 }
 #navigation li a {
 	color: #fff;
@@ -85,8 +89,9 @@ img {
 	background-position: 0 -59px;
 	color: #6d6157;
 }
-#navigation li.selected a {
+#navigation li.active a {
 	background-position: 0 0;
+	background-color: #002626;
 	color: #e4e1bd;
 }
 /*------------------------------ CONTENTS ------------------------------*/
