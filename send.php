@@ -25,9 +25,7 @@ use PHPMailer\PHPMailer\Exception;
             </p>
             <br><br>
             Have the day you deserve,<br>
-            Lance Cunanan <br>
             <strong></b>Lolo Caldos Farmville Resort.</strong>
-
             <br><br>
         </body>
         </html>
@@ -49,8 +47,7 @@ use PHPMailer\PHPMailer\Exception;
 
         $mail ->Subject = $subject;
         $mail -> Body = $msg;
-
         $mail ->send();
-        header('location:index.php');    
+        header('location:index.html');    
     }
 ?>
