@@ -30,6 +30,7 @@
             <a href='https://carpool.lolocaldos.tech/Registeredlist.php?token=$Confirmed'><br>Verifying Email Address</a>";
             $mail->Body = $message;
             $mail->send();
+            echo "<center><h1>CLICK THE LINK IN YOUR EMAIL</h1> </center>";
     }
    if(isset($_POST['send'])){
         //GET THE DATA FROM THE FORM
