@@ -1,5 +1,4 @@
 <?php
-    session_start();
    require 'connection.php';
    use PHPMailer\PHPMailer\PHPMailer;
    use PHPMailer\PHPMailer\SMTP;
@@ -31,7 +30,6 @@
             <a href='https://carpool.lolocaldos.tech/Registeredlist.php?token=$Confirmed'><br>Verifying Email Address</a>";
             $mail->Body = $message;
             $mail->send();
-    
     }
    if(isset($_POST['send'])){
         //GET THE DATA FROM THE FORM
@@ -51,7 +49,7 @@
         if(mysqli_num_rows($email_exist_run) > 0){
 
             echo "Email already Exist";
-             header('Location:index.html');
+             header('Location:index.php');
         }else{
             // Insert User /
             $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname,Contactnum,Email,Password,approved) VALUES ('$fn','$mn','$ln','$contact','$email','$password', 'Registered')";
@@ -62,7 +60,7 @@
                  echo "<center><h1>CLICK THE LINK IN YOUR EMAIL</h1> </center>";
             }else{
                 echo "Registered Failed";
-                header('Location:index.html');
+                header('Location:index.php');
             }
   
         }
