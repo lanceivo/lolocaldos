@@ -23,7 +23,7 @@ form {
     resize: vertical;
   }
   input[type="submit"] {
-    background-color: #4CAF50;
+    background-color: #ffb744;
     color: white;
     font-weight: bold;
     cursor: pointer;
