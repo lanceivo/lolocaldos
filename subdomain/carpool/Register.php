@@ -7,20 +7,20 @@
    require 'phpmailer/src/Exception.php';
    require 'phpmailer/src/PHPMailer.php';
    require 'phpmailer/src/SMTP.php';
-   function sendemail_verify($fn,$ln,$email,$Confirmed){
+   function sendemail_verify($fn,$ln,$email){
             $mail = new PHPMailer(true);
             $mail->SMTPDebug = true; 
             $mail->isSMTP();                                           
             $mail->Host = 'smtp.hostinger.com';                     
             $mail->SMTPAuth = true;      
                                         
-            $mail->Username = 'contact@lolocaldos.tech';                   
+            $mail->Username = 'carpool@lolocaldos.tech';                   
             $mail->Password = 'lance@15';                              
             $mail->SMTPSecure = "tls";           
             $mail->Port = 587;                                    
             //Recipients    
 
-            $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
+            $mail->setFrom('carpool@lolocaldos.tech', 'User Registration Carpool');
             $mail->addAddress($email);     
             $mail->isHTML(true); 
             $mail->Subject = 'Email verification';
@@ -57,7 +57,7 @@
             $query_run = mysqli_query($db_connection, $query);
 
             if($query_run){
-                 sendemail_verify("$fn","$ln","$email","$Confirmed");
+                 sendemail_verify("$fn","$ln","$email");
                  echo "<center><h1>CLICK THE LINK IN YOUR EMAIL</h1> </center>";
             }else{
                 echo "Registered Failed";
