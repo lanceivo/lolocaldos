@@ -9,7 +9,7 @@
    require 'phpmailer/src/SMTP.php';
    function sendemail_verify($fn,$ln,$email,$Confirmed){
             $mail = new PHPMailer(true);
-            // $mail->SMTPDebug = SMTP::DEBUG_OFF; 
+            $mail->SMTPDebug = true; 
             $mail->isSMTP();                                           
             $mail->Host = 'smtp.hostinger.com';                     
             $mail->SMTPAuth = true;      
@@ -30,7 +30,7 @@
             <a href='https://carpool.lolocaldos.tech/Registeredlist.php?token=$Confirmed'><br>Verifying Email Address</a>";
             $mail->Body = $message;
             $mail->send();
-            echo "<center><h1>CLICK THE LINK IN YOUR EMAIL</h1> </center>";
+            
     }
    if(isset($_POST['send'])){
         //GET THE DATA FROM THE FORM
@@ -53,7 +53,7 @@
              header('Location:index.php');
         }else{
             // Insert User /
-            $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname,Contactnum,Email,Password,approved) VALUES ('$fn','$mn','$ln','$contact','$email','$password', 'Registered')";
+            $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname,Contactnum,Email,Password,approved) VALUES ('$fn','$mn','$ln','$contact','$email','$password', $Confirmed)";
             $query_run = mysqli_query($db_connection, $query);
 
             if($query_run){
