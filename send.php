@@ -81,7 +81,7 @@ use PHPMailer\PHPMailer\Exception;
         $mail2 -> SMTPSecure ='tls';
         $mail2 -> Port = 587;
  
-        $mail2-> setFrom('samsonlance1@gmail.com', 'Lolo Caldos Farmville Resort');
+        // $mail2-> setFrom('samsonlance1@gmail.com', 'Lolo Caldos Farmville Resort');
         
         $mail2 ->addAddress($email2);
         $mail2 -> isHTML(true);
