@@ -48,6 +48,47 @@ use PHPMailer\PHPMailer\Exception;
         $mail ->Subject = $subject;
         $mail -> Body = $msg;
         $mail ->send();
+
+        $email2 = $_POST["email"];
+        $name2 = $_POST["name"];
+        $subject2 = $_POST["subject"];
+        $messages2 = $_POST["message"];
+
+        $msg2 = '
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+        </head>
+        <body>
+            <p><strong> Subject: </strong>' . $subject2 . '</p>
+            <br>
+            <p><strong> Message of the Sender: </strong>' . $messages2 . '
+            </p>
+            <br><br>
+            Have the day you deserve,<br>
+            <strong></b>Lolo Caldos Farmville Resort.</strong>
+            <br><br>
+        </body>
+        </html>
+        ';
+        $mail2 = new PHPMailer(true);
+        $mail2 -> isSMTP();
+        $mail2 ->Host = 'smtp.gmail.com';
+        $mail2 -> SMTPAuth = true;
+        $mail2 -> Username = 'samsonlance1@gmail.com';
+        $mail2 -> Password = 'yegtrkpoqwxcuzjo';
+        $mail2 -> SMTPSecure ='tls';
+        $mail2 -> Port = 587;
+ 
+        $mail2-> setFrom('samsonlance1@gmail.com', 'Lolo Caldos Farmville Resort');
+        
+        $mail2 ->addAddress($email2);
+        $mail2 -> isHTML(true);
+        
+        $mail2 ->Subject = $subject2;
+        $mail2 -> Body = $msg2;
+        $mail2 ->send();
         header('location:index.html');    
     }
 ?>

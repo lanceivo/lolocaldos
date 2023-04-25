@@ -14,13 +14,13 @@
             $mail->Host = 'smtp.hostinger.com';                     
             $mail->SMTPAuth = true;      
                                         
-            $mail->Username = 'carpool@lolocaldos.tech';                   
+            $mail->Username = 'contact@lolocaldos.tech';                   
             $mail->Password = 'lance@15';                              
             $mail->SMTPSecure = "tls";           
             $mail->Port = 587;                                    
             //Recipients    
 
-            $mail->setFrom('carpool@lolocaldos.tech', 'User Registration Carpool');
+            $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
             $mail->addAddress($email);     
             $mail->isHTML(true); 
             $mail->Subject = 'Email verification';
