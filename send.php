@@ -61,6 +61,7 @@ use PHPMailer\PHPMailer\Exception;
             <meta charset="UTF-8">
         </head>
         <body>
+            <p> FROM: ' . $name2 . ' </p><br>
             <p><strong> Subject: </strong>' . $subject2 . '</p>
             <br>
             <p><strong> Message of the Sender: </strong>' . $messages2 . '
