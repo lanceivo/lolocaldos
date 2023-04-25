@@ -84,7 +84,7 @@ use PHPMailer\PHPMailer\Exception;
  
         // $mail2-> setFrom('samsonlance1@gmail.com', 'Lolo Caldos Farmville Resort');
         
-        $mail2 ->addAddress($email2);
+        // $mail2 ->addAddress($email2);
         $mail2 -> isHTML(true);
         
         $mail2 ->Subject = $subject2;
