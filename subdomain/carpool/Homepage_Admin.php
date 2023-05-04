@@ -62,7 +62,7 @@
                               $result = mysqli_query($db_connection, $sql);
                               $row = mysqli_fetch_assoc($result);
                             ?>
-                  <center> <h1 style="color: black;">Welcome <span style="color: #FFFF;">  <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h1></center>
+                  <center> <h1 style="color: #FFFFFF;">Welcome <span style="color: #FFFF;">  <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h1></center>
         <div style="display:none" id="container">
         <table>
   <thead>
