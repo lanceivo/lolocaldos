@@ -157,7 +157,7 @@ statusFilter.addEventListener('change', function() {
             rejectButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const driverId = this.getAttribute('data-id');
-                    if (confirm(`Are you sure you want to reject driver ${driverId}?`)) {
+                    if (confirm(`Are you sure you want to reject driver?`)) {
                         // TODO: Implement reject functionality here
                     }
                 });
