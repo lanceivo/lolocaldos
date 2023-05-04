@@ -13,11 +13,11 @@
    function sendemail_verify($fn, $email){
         $mail = new PHPMailer(true);
         $mail->isSMTP();                                           
-        $mail->Host = 'smtp.hostinger.com';                     
+        $mail->Host = 'smtp.gmail.com';                     
         $mail->SMTPAuth = true;      
                                     
-        $mail->Username = 'contact@lolocaldos.tech';                   
-        $mail->Password = 'lance@15';                              
+        $mail->Username = 'lancecunanan6@gmail.com';                   
+        $mail->Password = 'bpdftwrjykcseugl';                              
         $mail->SMTPSecure = "tls";           
         $mail->Port = 587;                                    
         //Recipients
