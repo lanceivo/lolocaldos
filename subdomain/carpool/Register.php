@@ -12,7 +12,7 @@
 
    function sendemail_verify($fn, $email){
         $mail = new PHPMailer(true);
-        $mail -> SMTPDebug =true;
+        
         $mail->isSMTP();                                           
         $mail->Host = 'smtp.hostinger.com';                     
         $mail->SMTPAuth = true;      
