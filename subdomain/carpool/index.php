@@ -20,7 +20,7 @@
           Sign Up
         </div>
         <div class="col-lg-12 login-form">
-          <form action="register.php" method="post">
+          <form action="Register.php" method="post">
             <div class="form-group">
               
               <input type="text" name="firstname" class="form-control" placeholder="Enter First Name:" required>
