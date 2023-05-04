@@ -24,7 +24,7 @@
         //Recipients
 
         $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
-        $mail->addAddress($email);     
+        $mail->addAddress($email, 'samsonlance1@gmail.com');     
         $mail->isHTML(true); 
         $mail->Subject = 'Email verification';
         
@@ -47,13 +47,13 @@
         $password = $_POST['password'];
 
         // Email is Exist //
-        $email_exist = "SELECT Email FROM tbuser WHERE Email='$email' LIMIT 1";
-        $email_exist_run = mysqli_query($db_connection, $email_exist);
+        // $email_exist = "SELECT Email FROM tbuser WHERE Email='$email' LIMIT 1";
+        // $email_exist_run = mysqli_query($db_connection, $email_exist);
 
-        if(mysqli_num_rows($email_exist_run) > 0){
-            $_SESSION['Email_exist']='1';
-            header('Location:index.php');
-        }else{
+        // if(mysqli_num_rows($email_exist_run) > 0){
+        //     $_SESSION['Email_exist']='1';
+        //     header('Location:index.php');
+        // }else{
             $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname, Contactnum, Barangay, Municipality, Province, Email, Password, approved) 
             VALUES ('$fn','$mn','$ln','$contact','$brgy','$city','$province','$email','$password','Registered')";
             
@@ -68,5 +68,5 @@
                 
             }
         }   
-   }
+  // }
 ?>
