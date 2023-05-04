@@ -62,8 +62,9 @@
                 sendemail_verify("$fn","$email");
                 header('Location:login.php');
             }else{
-                echo "Registered Failed";
+                $_SESSION['register_failed']='5';
                 header('Location:index.php');
+                
             }
         }   
    }
