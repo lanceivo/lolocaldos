@@ -13,23 +13,23 @@
    function sendemail_verify($fn, $email){
         $mail = new PHPMailer(true);
         $mail->isSMTP();                                           
-        $mail->Host = 'smtp.gmail.com';                     
+        $mail->Host = 'smtp.hostinger.com';                     
         $mail->SMTPAuth = true;      
                                     
-        $mail->Username = 'lancecunanan6@gmail.com';                   
-        $mail->Password = 'bpdftwrjykcseugl';                              
+        $mail->Username = 'contact@lolocaldos.tech';                   
+        $mail->Password = 'lance@15';                              
         $mail->SMTPSecure = "tls";           
         $mail->Port = 587;                                    
         //Recipients
 
-        $mail->setFrom('lancecunanan6@gmail.com', 'User Registration Carpool');
+        $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
         $mail->addAddress($email);     
         $mail->isHTML(true); 
         $mail->Subject = 'Email verification';
         
         $message= "<p><b style='font-size: 30px;'>Carpool App</b><hr><br>Good day, <b> $fn </b>
         you only have one step to use the app, Click the link below to finalize the Carpool App Registration.
-        <a href='http://localhost/carpool/registeredlist.php'><br>Verifying Email Address</a>";
+        <a href='https://carpool.lolocaldos.tech/login.php'><br>Verifying Email Address</a>";
         $mail->Body = $message;
         $mail->send();
    }
