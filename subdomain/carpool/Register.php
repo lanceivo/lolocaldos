@@ -1,70 +1,70 @@
 <?php
-   require 'connection.php';
-   use PHPMailer\PHPMailer\PHPMailer;
-   use PHPMailer\PHPMailer\SMTP;
-   use PHPMailer\PHPMailer\Exception;
+    session_start();
+    require 'connection.php';
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
 
    require 'phpmailer/src/Exception.php';
    require 'phpmailer/src/PHPMailer.php';
    require 'phpmailer/src/SMTP.php';
-   function sendemail_verify($fn,$ln,$email){
-            $mail = new PHPMailer(true);
-            $mail->SMTPDebug = true; 
-            $mail->isSMTP();                                           
-            $mail->Host = 'smtp.hostinger.com';                     
-            $mail->SMTPAuth = true;      
-                                        
-            $mail->Username = 'contact@lolocaldos.tech';                   
-            $mail->Password = 'lance@15';                              
-            $mail->SMTPSecure = "tls";           
-            $mail->Port = 587;                                    
-            //Recipients    
 
-            $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
-            $mail->addAddress($email);     
-            $mail->isHTML(true); 
-            $mail->Subject = 'Email verification';
-            
-            $message= "<p><b style='font-size: 30px;'>Carpool App</b><hr><br>Good day, <b> $fn  $ln </b>
-            you only have one step to use the app, Click the link below to finalize the Carpool App Registration.
-            <a href='https://carpool.lolocaldos.tech/Registeredlist.php?'><br>Verifying Email Address</a>";
-            $mail->Body = $message;
-            $mail->send();
-            
-    }
-   if(isset($_POST['send'])){
-        //GET THE DATA FROM THE FORM
-        require 'connection.php';
-        $fn = $_POST['Firstname'];
+   function sendemail_verify($fn, $email){
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();                                           
+        $mail->Host = 'smtp.gmail.com';                     
+        $mail->SMTPAuth = true;      
+                                    
+        $mail->Username = 'lancecunanan6@gmail.com';                   
+        $mail->Password = 'bpdftwrjykcseugl';                              
+        $mail->SMTPSecure = "tls";           
+        $mail->Port = 587;                                    
+        //Recipients
+
+        $mail->setFrom('lancecunanan6@gmail.com', 'User Registration Carpool');
+        $mail->addAddress($email);     
+        $mail->isHTML(true); 
+        $mail->Subject = 'Email verification';
+        
+        $message= "<p><b style='font-size: 30px;'>Carpool App</b><hr><br>Good day, <b> $fn </b>
+        you only have one step to use the app, Click the link below to finalize the Carpool App Registration.
+        <a href='http://localhost/carpool/registeredlist.php'><br>Verifying Email Address</a>";
+        $mail->Body = $message;
+        $mail->send();
+   }
+   if(isset($_POST['register'])){
+
+        $fn = $_POST['firstname'];
         $mn = $_POST['middlename'];
         $ln = $_POST['lastname'];
         $contact = $_POST['contactnum'];
+        $brgy = $_POST['brgy'];
+        $city = $_POST['city'];
+        $province = $_POST['province'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $Confirmed = "Registered";
-    
-        //Email is Exist
+
+        // Email is Exist //
         $email_exist = "SELECT Email FROM tbuser WHERE Email='$email' LIMIT 1";
         $email_exist_run = mysqli_query($db_connection, $email_exist);
-        
+
         if(mysqli_num_rows($email_exist_run) > 0){
-
-            echo "Email already Exist";
-             header('Location:index.php');
+            $_SESSION['Email_exist']='1';
+            header('Location:index.php');
         }else{
-            // Insert User /
-            $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname,Contactnum,Email,Password,approved) VALUES ('$fn','$mn','$ln','$contact','$email','$password', $Confirmed)";
+            $query = "INSERT INTO tbuser (Firstname, Middlename, Lastname, Contactnum, Barangay, Municipality, Province, Email, Password, approved) 
+            VALUES ('$fn','$mn','$ln','$contact','$brgy','$city','$province','$email','$password','Registered')";
+            
             $query_run = mysqli_query($db_connection, $query);
-
+            
             if($query_run){
-                 sendemail_verify("$fn","$ln","$email");
-                 echo "<center><h1>CLICK THE LINK IN YOUR EMAIL</h1> </center>";
+                sendemail_verify("$fn","$email");
+                header('Location:login.php');
             }else{
                 echo "Registered Failed";
                 header('Location:index.php');
             }
-  
-        }
-
+        }   
    }
 ?>
