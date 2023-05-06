@@ -61,6 +61,7 @@
             
             if($query_run){
                 sendemail_verify("$fn","$email");
+                $_SESSION['register_passed']='6';
                 header('Location:login.php');
             }else{
                 $_SESSION['register_failed']='5';

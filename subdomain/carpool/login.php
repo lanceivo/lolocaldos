@@ -17,6 +17,7 @@
     <div class="row justify-content-center" style="margin:20px;">
       <div class="col-lg-6 col-md-8 login-box">
         <div class="col-lg-12 login-title">
+        <center> <h6 style="color: #007FFF; top:10px "><?php if (isset($message)) { echo $message; } ?></h6></center>
           Login Form
         </div>
         <div class="col-lg-12 login-form">

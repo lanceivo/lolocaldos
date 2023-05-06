@@ -16,5 +16,8 @@
     }else if(isset($_SESSION['register_failed']) && $_SESSION['register_failed'] == 5){
       $message = '<div id="incorrectMessage">Registration Error</div><script>setTimeout(function(){ document.getElementById("incorrectMessage").style.display = "none"; }, 8000);</script>';
       unset($_SESSION['register_failed']);
+    }else if(isset($_SESSION['register_passed']) && $_SESSION['register_passed'] == 6){
+      $message = '<div id="incorrectMessage">Verify your account from your email inbox.</div><script>setTimeout(function(){ document.getElementById("incorrectMessage").style.display = "none"; }, 8000);</script>';
+      unset($_SESSION['register_passed']);
     }
     ?>
