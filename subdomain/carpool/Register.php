@@ -32,6 +32,7 @@
         <a href='https://carpool.lolocaldos.tech/login.php'><br>Verifying Email Address</a>";
         $mail->Body = $message;
         $mail->send();
+        header('Location:index.php');
    }
    if(isset($_POST['register'])){
 
