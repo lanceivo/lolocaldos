@@ -10,21 +10,8 @@
    require 'phpmailer/src/PHPMailer.php';
    require 'phpmailer/src/SMTP.php';
 
-   
-       
-   
-   if(isset($_POST['register'])){
-
-        $fn = $_POST['firstname'];
-        $mn = $_POST['middlename'];
-        $ln = $_POST['lastname'];
-        $contact = $_POST['contactnum'];
-        $brgy = $_POST['brgy'];
-        $city = $_POST['city'];
-        $province = $_POST['province'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-         $mail = new PHPMailer(true);
+   function sendemail_verify($fn, $email){
+        $mail = new PHPMailer(true);
         
         $mail->isSMTP();                                           
         $mail->Host = 'smtp.hostinger.com';                     
@@ -45,7 +32,19 @@
         <a href='https://carpool.lolocaldos.tech/login.php'><br>Verifying Email Address</a>";
         $mail->Body = $message;
         $mail->send();
-        header('location:login.php'); 
+   }
+   if(isset($_POST['register'])){
+
+        $fn = $_POST['firstname'];
+        $mn = $_POST['middlename'];
+        $ln = $_POST['lastname'];
+        $contact = $_POST['contactnum'];
+        $brgy = $_POST['brgy'];
+        $city = $_POST['city'];
+        $province = $_POST['province'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
         // Email is Exist //
         // $email_exist = "SELECT Email FROM tbuser WHERE Email='$email' LIMIT 1";
         // $email_exist_run = mysqli_query($db_connection, $email_exist);
@@ -59,9 +58,14 @@
             
             $query_run = mysqli_query($db_connection, $query);
             
-        } else{
-                 $_SESSION['register_failed']='5';
+            if($query_run){
+                sendemail_verify("$fn","$email");
+                header('Location:login.php');
+            }else{
+                $_SESSION['register_failed']='5';
                 header('Location:index.php');
-        }  
+                
+            }
+        }   
   // }
 ?>
