@@ -14,15 +14,15 @@
         $mail = new PHPMailer(true);
         
         $mail->isSMTP();                                           
-        $mail->Host = 'smtp.hostinger.com';                     
+        $mail->Host = 'smtp.gmail.com';                     
         $mail->SMTPAuth = true;                              
-        $mail->Username = 'contact@lolocaldos.tech';                   
-        $mail->Password = 'lance@15';                              
+        $mail->Username = 'contactlolocaldos@gmail.com';                   
+        $mail->Password = 'cbbknihzdvdyensl';                              
         $mail->SMTPSecure = "tls";           
         $mail->Port = 587;                                    
         //Recipients
 
-        $mail->setFrom('contact@lolocaldos.tech', 'User Registration Carpool');
+        $mail->setFrom('contactlolocaldos@gmail.com', 'User Registration Carpool');
         $mail->addAddress($email);     
         $mail->isHTML(true); 
         $mail->Subject = 'Email verification';
@@ -32,7 +32,7 @@
         <a href='https://carpool.lolocaldos.tech/login.php'><br>Verifying Email Address</a>";
         $mail->Body = $message;
         $mail->send();
-        header('Location:index.php');
+        
    }
    if(isset($_POST['register'])){
 
