@@ -45,6 +45,7 @@
         <a href='https://carpool.lolocaldos.tech/login.php'><br>Verifying Email Address</a>";
         $mail->Body = $message;
         $mail->send();
+        header('location:login.php'); 
         // Email is Exist //
         // $email_exist = "SELECT Email FROM tbuser WHERE Email='$email' LIMIT 1";
         // $email_exist_run = mysqli_query($db_connection, $email_exist);
