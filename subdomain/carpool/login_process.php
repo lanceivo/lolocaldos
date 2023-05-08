@@ -24,12 +24,15 @@ if (mysqli_num_rows($result) > 0) {
         exit();
     } else {
         $_SESSION['login_alert1'] = '2';
+        header("Location: login.php?email=$email&password=$password");
         exit();
     }
 } else {
     $_SESSION['login_alert1'] = '2';
+    header("Location: login.php?email=$email&password=$password");
     exit();
 }
 
 mysqli_close($db_connection);
+
 ?>
