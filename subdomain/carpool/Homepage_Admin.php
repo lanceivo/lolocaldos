@@ -89,7 +89,7 @@
       <th>License Plate Number</th>
       <th>Status
         <select id="status-filter">
-          
+        
           <option value="Approved">Approved</option>
           <option value="Pending">Pending</option>
         </select>
