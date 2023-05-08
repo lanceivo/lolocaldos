@@ -27,7 +27,7 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#" onclick="profile()">Profile</a></li>
           <li class="nav-item"><a class="nav-link" href="#" onclick="Car()">Car Registration</a></li>
-          <li class="nav-item" id="logout"><a class="nav-link" href="login.php">Log Out</a></li>
+          <li class="nav-item" id="logout"><a class="nav-link" href="logout.php">Log Out</a></li>
         </ul>
       </div> 
     </div>
