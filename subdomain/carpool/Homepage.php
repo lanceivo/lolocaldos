@@ -37,7 +37,7 @@
     if(isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
     }else{
-        header('Location: index.php');
+        header('Location: login.php');
     }   
 ?>
   <?php
