@@ -10,6 +10,9 @@
   <title>CASH IN / CASH OUT</title>
 </head>
 <body>
+<?php
+    require 'Alert2.php';  
+?>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(8, 57, 102);">
       <div class="container px-4">
         <a class="navbar-brand" href="Homepage.php">
