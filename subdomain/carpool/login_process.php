@@ -10,7 +10,13 @@ $result = mysqli_query($db_connection, $query);
 
 if (mysqli_num_rows($result) > 0) {
     $row = $result->fetch_assoc();
-    if ($row['approved'] == 'Registered') {
+    if ($row['approved'] == 'Passenger') {
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
+        $_SESSION['uid'] = $row['User_ID'];
+        header("Location:Homepage_passenger.php");
+        exit();
+    }else if($row['approved'] == 'Driver' ){
         $_SESSION['email'] = $email;
         $_SESSION['password'] = $password;
         $_SESSION['uid'] = $row['User_ID'];

@@ -7,7 +7,7 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link href="css/car_registration2.css" rel="stylesheet">
+    <link href="css/car_registration.css" rel="stylesheet">
 </head>
 <style>
               table {
@@ -31,6 +31,9 @@
           tr{
           background-color: #ddd;
         }
+        html, body {
+        overflow-x: hidden;
+      }
 </style>
 <body >
 <?php
@@ -49,13 +52,14 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="Registeredlist.php">User List</a></li>  
           <li class="nav-item"><a class="nav-link" href="#" onclick="Car()">Car Approval</a></li>
+          <li class="nav-item"><a class="nav-link" href="daily.php">Daily Report</a></li>
           <li class="nav-item" id="logout"><a class="nav-link" href="logout.php">Log Out</a></li>
         </ul>
       </div> 
     </div>
   </nav>
+
   <?php
-    session_start(); 
     if(isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
     }else{
@@ -71,7 +75,8 @@
                               $row = mysqli_fetch_assoc($result);
                             ?>
                   <center> <h1 style="color: #FFFFFF;">Welcome <span style="color: #FFFF;">  <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h1></center>
-        <div style="display:none" id="container">
+                
+                  <div style="display:none" id="container">
         <table>
   <thead>
     <tr>
@@ -89,7 +94,7 @@
       <th>License Plate Number</th>
       <th>Status
         <select id="status-filter">
-        
+          
           <option value="Approved">Approved</option>
           <option value="Pending">Pending</option>
         </select>
@@ -128,7 +133,7 @@
         echo "<td>"."<a href='approved.php?id=$driverid'><Button class-'approve-btn' id='approved' name='approved'
         onclick='disable(this)'> Approve</Button></a></td>";
         echo "<td><Button class='reject-btn' data-id='driverid'" . $row["Driver_ID"] . "'> Reject</Button></td>";
-        echo "</tr>";
+        echo "</tr>";  
       }
     ?>
   </tbody>

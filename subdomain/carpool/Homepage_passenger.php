@@ -7,7 +7,7 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link href="css/car_registration.css" rel="stylesheet">
+    <link href="css/home_passenger.css" rel="stylesheet">
 </head>
 
 <body >
@@ -27,7 +27,7 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#" onclick="profile()">Profile</a></li>
           <li class="nav-item"><a class="nav-link" href="#" onclick="Car()">Car Registration</a></li>
-          <li class="nav-item"><a class="nav-link" href="CICO.php">CashIn/CashOut</a></li>
+          <li class="nav-item"><a class="nav-link" href="cashin_passenger.php">CashIn</a></li>
           <li class="nav-item" id="logout"><a class="nav-link" href="logout.php">Log Out</a></li>
         </ul>
       </div> 
@@ -147,13 +147,10 @@
       function Car() {
         document.getElementById("container").style.display = "block";
         document.getElementById("profile").style.display = "none";
-        document.getElementById("CICO").style.display = "none";
-
       }
       function profile(){
         document.getElementById("profile").style.display = "block";
         document.getElementById("container").style.display = "none";
-        document.getElementById("CICO").style.display = "none";
       }
 
   
