@@ -30,7 +30,7 @@
   <h1 style="color: black;" id="welcome">Welcome <span style="color: black;"><?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h1>
   <h1 style="color: black;" id="welcome">Balance <span style="color: black;"><?php echo $row['uBalance'] ?></span></h1>
 
-  <h2 style="text-align: center;">MODE OF TRANSACTION</h2>
+  <h2 style="text-align: center;">CASH IN TRANSACTION</h2>
 
   <form action="cashin_process.php" method="post">
             <label for="cico">Transaction Type</label>
