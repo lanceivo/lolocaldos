@@ -17,7 +17,7 @@
 ?>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(8, 57, 102);">
     <div class="container px-4">
-      <a class="navbar-brand" href="Homepage.php">
+      <a class="navbar-brand" href="Homepage_passenger.php">
         <span style="color:#ffffff; font-size:26px; font-weight:bold; letter-spacing: 1px;">Carpool App</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
