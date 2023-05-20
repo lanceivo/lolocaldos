@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php
-    require 'Alert2.php';  
+    require 'alert2.php';  
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(8, 57, 102);">
       <div class="container px-4">
