@@ -31,7 +31,7 @@ if (isset($_POST['proceed'])) {
                 $updateResult = mysqli_query($db_connection, $updateQuery);
 
                 if ($updateResult) {
-                    header('Location: cashinform.php');
+                    header('Location: CICO.php');
                 } else {
                     $_SESSION['cashin_failed'] = '7';
                     header('Location: CICO.php');
@@ -75,7 +75,7 @@ if (isset($_POST['proceed'])) {
                 header('Location: CICO.php');
             } else {
                 $_SESSION['cashout_failed'] = '7';
-                header('Location: Cashout.php');
+                header('Location: CICO.php');
             }
         } else {
             $_SESSION['insufficient'] = '8';
