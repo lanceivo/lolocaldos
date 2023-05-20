@@ -31,7 +31,9 @@ if (isset($_POST['proceed'])) {
                 $updateResult = mysqli_query($db_connection, $updateQuery);
 
                 if ($updateResult) {
+                    $_SESSION['cashin_success'] = '10';
                     header('Location: CICO.php');
+                   
                 } else {
                     $_SESSION['cashin_failed'] = '7';
                     header('Location: CICO.php');
