@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="css/cico.css">
+    <link rel="stylesheet" href="css/welcome.css">
     <link rel="icon" type="png" href="img/s1.png">
 
   <title>CASH IN / CASH OUT</title>
@@ -28,8 +29,8 @@
     $result = mysqli_query($db_connection, $sql);
     $row = mysqli_fetch_assoc($result);
   ?>
-  <h1 style="color: black;" id="welcome">Welcome <span style="color: black;"><?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h1>
-  <h1 style="color: black;" id="welcome">Balance <span style="color: black;"><?php echo $row['uBalance'] ?></span></h1>
+  <h5 style="color: black;" id="welcome"><span style="color: black;">Welcome <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h5>
+  <h5 style="color: black;" id="welcome"><span style="color: black;">Balance <?php echo $row['uBalance'] ?></span></h5>
       <h2 style="text-align:center;"> MODE OF TRANSACTION</h2>
       <form action="cico_process.php" method="POST">
               <label for="cico">Transaction Type</label>

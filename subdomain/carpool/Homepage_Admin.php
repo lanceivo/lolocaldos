@@ -98,7 +98,7 @@
                               $result = mysqli_query($db_connection, $sql);
                               $row = mysqli_fetch_assoc($result);
                             ?>
-                   <h5 style="color: #FFFFFF; text-align:right">Welcome <span style="color: #FFFF;">  <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h5>
+                   <h5 style="color: #FFFFFF; text-align:right"><span style="color: #FFFF;">Welcome <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h5>
  <div id="left">
     <h1 id="title"> Carpool </h1>
     <p>Carpooling is a sustainable and cost-effective transportation solution that involves sharing rides with others who are headed in the same direction. By pooling resources and sharing the same vehicle, carpooling helps reduce traffic congestion, lower fuel consumption, and decrease carbon emissions, making it an eco-friendly option. It also allows individuals to save money on fuel costs and parking fees, while promoting social interactions and building a sense of community among participants. Carpooling not only benefits the environment but also provides a convenient and efficient way to commute, making it an increasingly popular choice for people looking to reduce their carbon footprint and contribute to a greener future.</p>
