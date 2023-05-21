@@ -29,15 +29,21 @@ session_start();
             $updateQuery = "UPDATE tbuser SET uBalance = uBalance + $conversionRate WHERE User_ID = '$ids'";
             $updateResult = mysqli_query($db_connection, $updateQuery);
             if ($updateResult) {
-                $_SESSION['cashin_success'] = '10';
-                header('Location:cashin_passenger.php');
+                echo '<script>
+                    window.alert("Cash In Successfully");
+                    window.location.href ="cashin_passenger.php";
+                    </script>';
             } else {
-                $_SESSION['cashin_failed'] = '7';
-                header('Location:cashin_passenger.php');
+                echo '<script>
+                    window.alert("Cash In Failed");
+                    window.location.href ="cashin_passenger.php";
+                    </script>';
             }
         } else {
-            $_SESSION['cashin_failed'] = '7';
-            header('Location:cashin_passenger.php');
+            echo '<script>
+                    window.alert("Cash In Failed");
+                    window.location.href ="cashin_passenger.php";
+                    </script>';
         }
     }
 

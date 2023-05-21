@@ -31,20 +31,28 @@ if (isset($_POST['proceed'])) {
                 $updateResult = mysqli_query($db_connection, $updateQuery);
 
                 if ($updateResult) {
-                    $_SESSION['cashin_success'] = '10';
-                    header('Location: CICO.php');
-                   
+                    echo '<script>
+                    window.alert("Cash In Successfully");
+                    window.location.href ="CICO.php";
+                    </script>';
                 } else {
-                    $_SESSION['cashin_failed'] = '7';
-                    header('Location: CICO.php');
+                    echo '<script>
+                    window.alert("Cash In Failed. Try Again");
+                    window.location.href ="CICO.php";
+                    </script>';
                 }
             } else {
-                echo "Invalid amount";
+                echo '<script>
+                    window.alert("Invalid Amount. Please Try Again");
+                    window.location.href ="CICO.php";
+                    </script>';
                 exit;
             }
         } else {
-            $_SESSION['cashin_failed'] = '7';
-            header('Location: CICO.php');
+            echo '<script>
+                    window.alert("Cash In Failed. Try Again");
+                    window.location.href ="CICO.php";
+                    </script>';
         }
     } else if ($tran_type == 'CashOut') {
         $ids = $_SESSION['uid'];
@@ -73,15 +81,22 @@ if (isset($_POST['proceed'])) {
                 $query = "INSERT INTO tb_ci_co (User_ID, transaction_type, amount, pro_fee, con_fee, status)
                           VALUES ('$ids', '$tran_type', '$amount', '$profee', '$confee', 'Confirmed')";
                 $result = mysqli_query($db_connection, $query);
-                $_SESSION['cashout_success'] = '9';
-                header('Location: CICO.php');
+                echo '<script>
+                    window.alert("Cash Out Successfully");
+                    window.location.href ="CICO.php";
+                    </script>';
             } else {
-                $_SESSION['cashout_failed'] = '7';
-                header('Location: CICO.php');
+                echo '<script>
+                    window.alert("Cash Out Failed");
+                    window.location.href ="CICO.php";
+                    </script>';
             }
         } else {
-            $_SESSION['insufficient'] = '8';
-            header('Location: CICO.php');
+            echo '<script>
+                    window.alert("Your Balance Is Insufficient");
+                    window.location.href ="CICO.php";
+                    </script>';
+           
         }
     }
 }
