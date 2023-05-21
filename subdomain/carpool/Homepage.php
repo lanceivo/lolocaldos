@@ -9,6 +9,7 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
     <link href="css/car.registration.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/welcome.css">
     <link rel="icon" type="png" href="img/s1.png">
     <style>
         #left {
