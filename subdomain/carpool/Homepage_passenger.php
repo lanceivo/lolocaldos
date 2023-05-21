@@ -7,9 +7,31 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
     <link href="css/home_passenger.css" rel="stylesheet">
     <link rel="icon" type="png" href="img/s1.png">
-
+    <style>
+        #left {
+        float: left;
+        width: 40%;
+        padding: 10px;
+        color: white;
+        margin-top: 7%;
+        margin-left: 3%;
+        text-align: justify;
+        font-family: 'Signika Negative', sans-serif;
+        font-size: 20px;
+    }
+    
+    #right {
+        float: right;
+        width: 50%;
+        padding: 10px;
+    }#title{
+      text-align: center;
+      font-size: 80px;
+    }
+    </style>
 </head>
 
 <body >
@@ -52,7 +74,7 @@
                               $result = mysqli_query($db_connection, $sql);
                               $row = mysqli_fetch_assoc($result);
                             ?>
-                  <center> <h1 style="color: #FFFF;">Welcome <span style="color: #FFFF;">  <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h1></center>
+                   <h5 style="color: #FFFFFF; text-align:right">Welcome <span style="color: #FFFF;">  <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h5>
         <div class="container" style="display:none" id="container">
         <div class="row justify-content-center" style="margin:0px;">
         <div class="col-lg-6 col-md-8 login-box">
@@ -137,7 +159,14 @@
             </div>
         </div>
       
-        </div>  
+        </div>
+  <div id="left">
+    <h1 id="title"> Carpool </h1>
+    <p>Carpooling is a sustainable and cost-effective transportation solution that involves sharing rides with others who are headed in the same direction. By pooling resources and sharing the same vehicle, carpooling helps reduce traffic congestion, lower fuel consumption, and decrease carbon emissions, making it an eco-friendly option. It also allows individuals to save money on fuel costs and parking fees, while promoting social interactions and building a sense of community among participants. Carpooling not only benefits the environment but also provides a convenient and efficient way to commute, making it an increasingly popular choice for people looking to reduce their carbon footprint and contribute to a greener future.</p>
+ </div> 
+ <div id="right">
+    <img src="img/carpool.png" alt="" width="500" height="500">
+ </div>   
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
