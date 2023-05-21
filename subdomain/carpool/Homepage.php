@@ -75,7 +75,7 @@
                               $result = mysqli_query($db_connection, $sql);
                               $row = mysqli_fetch_assoc($result);
                             ?>
-                  <center> <h1 style="color: #FFFF;">Welcome <span style="color: #FFFF;">  <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h1></center>
+                   <h5 style="color: #FFFFFF; text-align:right">Welcome <span style="color: #FFFF;">  <?php echo $row['Firstname']." ".$row['Lastname']; ?></span></h5>
         <div class="container" style="display:none" id="container">
         <div class="row justify-content-center" style="margin:0px;">
         <div class="col-lg-6 col-md-8 login-box">
