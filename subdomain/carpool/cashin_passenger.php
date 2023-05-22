@@ -40,21 +40,41 @@
             </select><br>
             <div id="amountField">
             <label for="amount">Amount</label><br>
-                <select name="amount" required>
-                    <option value="">Select an amount</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                    <option value="250">250</option>
-                    <option value="500">500</option>
-                </select><br>
+                <input type="number" name="amount" required><br>
+            </div>
+            <div id="conversionFeeField">
+            <label for="gcashref">Conversion Fee</label><br>
+            <input type="number" name="confee" style="margin-top: -1%;" id="conversionFeeField" readonly><br>
             </div>
             <div id="gcashRefField">
             <label for="gcashref">Gcash Reference</label><br>
-            <input type="number" name="gcashref" required><br>
+            <input type="number" name="gcashref"  required><br>
             </div>
             <input type="submit" name="proceed" value="Proceed" id="proceed">
             <center> <h6 style="color: red; top:10px "><?php if (isset($message)) { echo $message; } ?></h6></center>  
   </form>  
 </div>
+<script>
+      // Get the amount input field
+      const amountInput = document.querySelector('input[name="amount"]');
+      // Get the conversion fee input field
+      const conversionFeeInput = document.querySelector('input[name="confee"]');
+
+      // Listen for changes in the amount input field
+      amountInput.addEventListener('input', function() {
+          // Get the amount value
+          const amount = parseInt(this.value);
+          
+          // Calculate the conversion fee based on the amount
+          let conversionFee = 0;
+          if (amount >= 50) {
+            conversionFee = Math.min(Math.floor(amount / 50) * 10, 50);
+          }
+          // Set the conversion fee value in the input field
+          conversionFeeInput.value = conversionFee;
+      });
+        
+        document.getElementById("conversionFeeField").style.display ="none";
+</script>
 </body>
 </html>

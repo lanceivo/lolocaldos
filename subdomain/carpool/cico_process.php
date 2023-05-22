@@ -11,8 +11,8 @@ if (isset($_POST['proceed'])) {
 
     if ($tran_type == 'CashIn') {
         $ids = $_SESSION['uid'];
-        $query = "INSERT INTO tb_ci_co (User_ID, transaction_type, amount, gcash_ref_num, status)
-                  VALUES ('$ids', '$tran_type', '$amount', '$gcashref', 'Confirmed')";
+        $query = "INSERT INTO tb_ci_co (User_ID, transaction_type,gcash_ref_num, con_fee amount,  status)
+                  VALUES ('$ids', '$tran_type','$gcashref','$confee','$amount','Confirmed')";
         $result = mysqli_query($db_connection, $query);
 
         if ($result) {

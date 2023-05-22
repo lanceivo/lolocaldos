@@ -42,6 +42,10 @@
                 <label for="amount">Amount</label><br>
                 <input type="number" name="amount" required><br>
               </div>
+              <div id="conversionFeeField">
+                <label for="conversionFee">Conversion Fee</label><br>
+                <input type="number" name="confee" id="conversionFeeField" readonly><br>
+              </div>
               <div id="gcashRefField">
                 <label for="gcashref">Gcash Reference</label><br>
                 <input type="number" name="gcashref"><br>
@@ -50,15 +54,11 @@
                 <label for="processingFee">Processing Fee</label><br>
                 <input type="number" name="profee" id="processingFeeInput" readonly>
               </div>
-              <div id="conversionFeeField" style="display: none;">
-                <label for="conversionFee">Conversion Fee</label><br>
-                <input type="number" name="confee" id="conversionFeeField" readonly><br>
-              </div>
               <input type="submit" name="proceed" value="Proceed" id="proceed">
         </form>
     </div>
     <script>
-   // Get the amount input field
+// Get the amount input field
 const amountInput = document.querySelector('input[name="amount"]');
 // Get the conversion fee input field
 const conversionFeeInput = document.querySelector('input[name="confee"]');
@@ -71,19 +71,13 @@ amountInput.addEventListener('input', function() {
     // Calculate the conversion fee based on the amount
     let conversionFee = 0;
     if (amount >= 50) {
-        if (amount >= 50 && amount <= 99) {
-            conversionFee = 40;
-        } else if (amount >= 100 && amount <= 249) {
-            conversionFee = 80;
-        } else if (amount >= 250 && amount <= 499) {
-            conversionFee = 200;
-        } else if (amount >= 500) {
-            conversionFee = 450;
-        }
+      conversionFee = Math.min(Math.floor(amount / 50) * 10, 50);
     }
     // Set the conversion fee value in the input field
     conversionFeeInput.value = conversionFee;
 });
+  
+  document.getElementById("conversionFeeField").style.display ="none";
 
 </script>
 <script>
@@ -114,18 +108,18 @@ amtInput.addEventListener('input', function() {
     var amountField = document.getElementById("amountField");
     var gcashRefField = document.getElementById("gcashRefField");
     var processingFeeField = document.getElementById("processingFeeField");
-    var conversionFeeField = document.getElementById("conversionFeeField");
+    var conversionFeeField = document.getElementById("conversionFeeField").style.display ="none"
 
     if (transactionType === "CashIn") {
       amountField.style.display = "block";
       gcashRefField.style.display = "block";
       processingFeeField.style.display = "none";
-      conversionFeeField.style.display = "none";
+      conversionFeeField.style.display = "block";
     } else if (transactionType === "CashOut") {
       amountField.style.display = "block";
       gcashRefField.style.display = "none";
       processingFeeField.style.display = "block";
-      conversionFeeField.style.display = "block";
+      conversionFeeField.style.display = "none";
     }
   }
 </script>

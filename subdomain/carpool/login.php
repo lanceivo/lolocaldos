@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <link href="css/login.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
   <link rel="icon" type="png" href="img/s1.png">
 
 </head>
@@ -16,6 +17,7 @@
     require 'Alert.php';
 ?>
   <div class="container">
+  <center><p style="margin-top: 3%; margin-bottom:-5%;" >Welcome-To-Carpool-App</p></center>
     <div class="row justify-content-center" style="margin:20px;">
       <div class="col-lg-6 col-md-8 login-box">
         <div class="col-lg-12 login-title">
