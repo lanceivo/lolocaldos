@@ -9,7 +9,7 @@ body {
   
 #background{
     background: url(../images/bg-pattern.jpg)repeat-x center top;
-    min-height: 1318px;	
+    min-height: 118px;	
 }
 #page{
     width: 960px;
@@ -229,37 +229,15 @@ hr {
 	float: right;
 	display: inline-block;
 	line-height: 26px;
-	margin: 12px 0 0;
+	margin: 9px 0 0;
 }
-#connect a {
-	background: url(../images/icons.png) no-repeat;
-	display: inline-block;
-	height: 23px;
-	width: 23px;
-	margin-left: 10px;
-}
-#connect a.pinterest {
-	background-position: 0 -33px;
-}
-#connect a.facebook {
-	background-position: 0 -98px;
-}
-#connect a.twitter {
-	background-position: 0 -164px;
-	width: 28px;
-}
-#connect a.googleplus {
-	background-position: 0 -230px;
-}
-#connect a.pinterest:hover {
-	background-position: 0 0;
-}
-#connect a.facebook:hover {
-	background-position: 0 -65px;
-}
-#connect a.twitter:hover {
-	background-position: 0 -131px;
-}
-#connect a.googleplus:hover {
-	background-position: 0 -197px;
+ #fb {
+	height: 30px;
+	margin-left: -50%;
+}#tiktok{
+	height: 30px;
+
+}#ig{
+	height: 30px;
+
 }
