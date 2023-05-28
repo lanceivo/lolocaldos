@@ -1,39 +1,86 @@
 <!DOCTYPE html>
-<!-- Website template by freewebsitetemplates.com -->
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>Lolo Caldos-Service</title>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/service.css" type="text/css">
+	<link rel="icon" type="png" href="images/logo.png">
+	<style>
+.slideshow-container {
+  position: relative;
+}
+
+.slide {
+  display: none;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+/* Add CSS transitions for smooth animation */
+.slide {
+  transition: opacity 0.5s ease;
+}
+.slideshow2-container {
+  position: relative;
+}
+.slide2 {
+  display: none;
+ 
+}.slide2:first-child {
+  display: block;
+}
+
+.slide2 ul {
+  padding: 0;
+}.slide2 {
+  transition: opacity 0.5s ease;
+}
+.slideshow3-container {
+  position: relative;
+}
+.slide3 {
+  display: none;
+}.slide2:first-child {
+  display: block;
+}
+.slide3 ul {
+  padding: 0;
+}.slide3 {
+  transition: opacity 0.5s ease;
+}
+
+	</style>
 </head>
 <body>
 	<div id="background">
         <div id="page">
             <div id="header">
                 <div id="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="LOGO" height="150" width="150"></a>
+                    <a href="index.html"><img src="images/logo.png" alt="LOGO" height="180" width="180" style="margin-bottom: -13%;"></a>
                 </div>
                 <div id="navigation">
                     <ul>
-                        <li class="selected">
+                        <li>
                             <a href="index.html">Home</a>
                         </li>
-                        <li class="active">
+						<li >
+                            <a href="blog.html">Blog</a>
+                        </li>
+                        <li  class="active">
                             <a href="service.html">Service</a>
                         </li>
-                        <li class="selected">
-                            <a href="blog.html">Blogs</a>
-                        </li>
-                        <li class="selected">
+                        <li>
                             <a href="room.html">Rooms</a>
                         </li>
-                        <li class="selected">
+                        <li >
                             <a href="amenities.html">Amenities</a>
                         </li>
-                        <li class="selected">
+                        <li>
                             <a href="about.html">About</a>
                         </li>
-                        <li class="selected">
+                        <li>
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
@@ -43,49 +90,296 @@
 				<div class="box">
 					<div>
 						<div class="body">
-							<h1>Rooms</h1>
+							<h1 style="text-align: center;">LOLO CALDOS SERVICES</h1>
 							<ul id="rooms">
-								<li>
-									<a href="rooms.html"><img src="images/bg-body.jpg" alt="Img"></a>
-									<h2><a href="rooms.html">First Class Room</a></h2>
-									<p>
-										Cras dui sapien, feugiat vitae tristique ut, lobortis tempor orci. Donec pulvinar sagittis metus ut tristique. Pellentes que habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas idios.
-									</p>
-									<span class="rate">Rate: 220 / Day</span>
-								</li>
-								<li>
-									<a href="rooms.html"><img src="images/bg-body.jpg" alt="Img"></a>
-									<h2><a href="rooms.html">Deluxe Room</a></h2>
-									<p>
-										Sed et augue lorem. In sit amet placerat arcu. Mauris volutpat ipsum ac justo mollis vel vestibulum orci gravida. Vestibulum sit amet porttitor odio. Nulla facilisi. Fusce at pretium felis.
-									</p>
-									<span class="rate">Rate: 150 / Day</span>
-								</li>
-								<li>
-									<a href="rooms.html"><img src="images/bg-body.jpg" alt="Img"></a>
-									<h2><a href="rooms.html">Suite Room</a></h2>
-									<p>
-										Sed et augue lorem. In sit amet placerat arcu. Mauris volutpat ipsum ac justo mollis vel vestibulum orci gravida. Vestibulum sit amet porttitor odio. Nulla facilisi. Fusce at pretium felis.
-									</p>
-									<span class="rate">Rate: 180 / Day</span>
-								</li>
+								<div class="slideshow-container">
+									<div class="slide">
+										<li>
+											<img src="images/private/private1.png" alt="Img">
+											<h2>Private Services</h2>
+											<p>
+												Enjoy Exclusive Pool Experiences
+												At our private pool, we offer a range of private services designed to provide you with a memorable and exclusive experience. Here are our rates and packages:
+												
+												Daytime Rates (8am-5pm) and Nighttime Rates (2pm-10pm):
+												
+												Weekdays (Tuesday, Wednesday, Thursday only)
+												Inclusion: 1 Large room with air conditioning
+												Maximum capacity: 25-30 people
+												</p>
+											<span class="rate">Rate: Php10,000.00</span>
+										</li>
+									</div>
+									<div class="slide">
+										<li>
+											<img src="images/private/private2.png" alt="Img">
+											<h2>Private Services</h2>
+											<p>
+												Overnight Package (2pm-12nn) - 22 hours:<br>
+												Package A:<br>
+												Inclusions: 1 Large Villa with air-conditioned toilet
+												Maximum capacity: 15-20 people</p>
+											<span class="rate">Rate: Php12,000.00</span>
+										</li>
+									</div>
+									<div class="slide">
+										<li>
+											<img src="images/private/private3.png" alt="Img">
+											<h2>Private Services</h2>
+											<p>
+												Package B:<br>
+												Inclusions: 1 Large Villa with air conditioning, 1 Couples Room with air conditioning and private toilet & bath
+												Maximum capacity: 20-25 people</p>
+											<span class="rate">Rate: Php15,000.00	</span>
+										</li>
+									</div>
+									<div class="slide">
+										<li>
+											<img src="images/private/private4.png" alt="Img">
+											<h2>Private Services</h2>
+											<p>
+												Package C:<br>
+												Inclusions: 1 Large Villa with air-conditioned toilet, 2 Rooms with air conditioning and private toilet & bath
+												Maximum capacity: 25-30 people</p>
+											<span class="rate">Rate: Php18,000.00</span>
+										</li>
+									</div>
+									<div class="slide">
+										<li>
+											<img src="images/private/private5.png" alt="Img">
+											<h2>Private Services</h2>
+											<p>
+												Whether you're looking for a daytime getaway or an overnight retreat, our private services offer the perfect setting for relaxation and enjoyment. Experience the exclusivity and comfort of our private pool facilities as you create lasting memories with your group.											</p>
+											<span class="rate">Rate: Php18,000.00</span>
+										</li>
+									</div>
+								</div><hr style="margin-bottom: -1%;">
+							
+								<div class="slideshow2-container">
+									<div class="slide2">
+									  <ul>
+										<li>
+										  <img src="images/public/public1.png" alt="Img">
+										  <h2>Public Villas</h2>
+										  <p>
+											At Lolo Caldos, we offer two swimming pools for adults and children, 
+											as well as fully occupied villas for our guests who wish to have an overnight stay.</p>
+										  <span class="rate">Rate: 160.00</span>
+										</li>
+									  </ul>
+									</div>
+									<div class="slide2">
+									  <ul>
+										<li>
+										  <img src="images/public/public2.png" alt="Img">
+										  <h2>Adult Swimming Pool</h2>
+										  <p>
+											Adult pool is about 9ft above. these adult is for 13y/o above. and the price range of this is Php 120 for day and 140 for night time.</p>
+										  <span class="rate">Rate: Php 120.00</span>
+										</li>
+									  </ul>
+									</div>
+									<div class="slide2">
+									  <ul>
+										<li>
+										 <img src="images/public/public3.png" alt="Img">
+										 <h2>Kidding Swimming Pool</h2>
+										 <p>
+											The kiddie pool is approximately 4 feet deep and is suitable for children of all ages. The price range for this pool is Php 100 for daytime use and Php 120 for nighttime use.
+										</p>
+										  <span class="rate">Rate: Php 100.00</span>
+										</li>
+									  </ul>
+									</div>
+									<div class="slide2">
+									  <ul>
+										<li>
+										  <img src="images/public/public4.png" alt="Img">
+										  <h2>Public Basketball Court</h2>
+										  <p>
+											Our public basketball court is free for our guests to enjoy. They are welcome to play to their heart's content and make the most of their time with us.										  </p>
+										  <span class="rate">Rate: FREE</span>
+										</li>
+									  </ul>
+									</div>
+									<div class="slide2">
+										<ul>
+										  <li>
+											<img src="images/public/public5.png" alt="Img">
+											<h2>Public Karaoke</h2>
+											<p>
+											We also provide a public karaoke area where guests can showcase their singing talents and enjoy lively entertainment in a social atmosphere.											</p>
+											<span class="rate">Rate: FREE</span>
+										  </li>
+										</ul>
+									  </div>
+								  </div><hr style="margin-bottom: -1%;">
+								 
+								  
+								  <div class="slideshow3-container">
+									<div class="slide3">
+										<ul>
+										  <li>
+											<img src="images/cottages/Cottage1.png" alt="Img">
+											<h2>Large Nipa Hut</h2>
+											<p>
+												Capacity: Up to 10 people<br>
+												Description: Our eco-friendly Large Nipa Huts Village Bohol Guesthouse offers a serene environment for a peaceful stay.</p>
+											<span class="rate">Rate:Php 700.00</span>
+										  </li>
+										</ul>
+									</div>
+									<div class="slide3">
+										<ul>
+										  <li>
+											<img src="images/cottages/Cottage2.png" alt="Img">
+											<h2>Concreate Cottage</h2>
+											<p>
+												Capacity: Up to 12-15 people<br>
+												Description: Our Concreate Cottage provides a cozy and inviting atmosphere for a memorable getaway.</p>
+											<span class="rate">Rate: Php 800/1000</span>
+										  </li>
+										</ul>
+									</div>
+									<div class="slide3">
+										<ul>
+										  <li>
+											<img src="images/cottages/Cottage3.png" alt="Img">
+											<h2>Big Tent</h2>
+											<p>
+												Capacity: Up to 15-25 people<br>
+												Description: The Big Tent is perfect for family occasions and gatherings, providing a spacious and versatile setting.</p>
+											<span class="rate">Rate: Php 800/1000</span>
+										  </li>
+										</ul>
+									</div>
+									<div class="slide3">
+										<ul>
+										  <li>
+											<img src="images/cottages/Cottage4.png" alt="Img">
+											<h2>Gazeebo</h2>
+											<p>
+												Capacity: Up to 8-10 people<br>
+												Description: Experience the charm of our Gazeebo, a sheltered outdoor space ideal for relaxation and socializing.</p>
+											<span class="rate">Rate: Php 800/1000</span>
+										  </li>
+										</ul>
+									</div>
+									<div class="slide3">
+										<ul>
+										  <li>
+											<img src="images/cottages/Cottage5.png" alt="Img">
+											<h2>Nipa Hut</h2>
+											<p>
+												Capacity: Up to 10 people<br>
+												Description: Our Small Nipa Huts Village Bohol Guesthouse offers a cozy and eco-friendly environment for a delightful stay.</p>
+											<span class="rate">Rate: Php 500.00</span>
+										  </li>
+										</ul>
+									</div>
+								  </div>
 							</ul>
-						</div>
+						</div>		
 					</div>
 				</div>
 			</div>
 		</div>
+		<script>
+			// JavaScript to automatically transition slides
+			var slides = document.getElementsByClassName("slide");
+			var currentSlide = 0;
+
+			function showSlide(n) {
+			// Hide all slides
+			for (var i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+
+			// Display the specified slide
+			slides[n].style.display = "block";
+			}
+
+			function nextSlide() {
+			currentSlide++;
+			if (currentSlide >= slides.length) {
+				currentSlide = 0;
+			}
+			showSlide(currentSlide);
+			}
+
+			// Set the interval for slide transitions (in milliseconds)
+			var slideInterval = setInterval(nextSlide, 3000);
+		  </script>
+
+		<script>
+			// JavaScript to automatically transition slides
+			var slides2 = document.getElementsByClassName("slide2");
+			var currentSlide2 = 0;
+
+			function showSlide2(n) {
+			// Hide all slides
+			for (var i = 0; i < slides2.length; i++) {
+				slides2[i].style.display = "none";
+			}
+
+			// Display the specified slide
+			slides2[n].style.display = "block";
+			}
+
+			function nextSlide2() {
+			currentSlide2++;
+			if (currentSlide2 >= slides2.length) {
+				currentSlide2 = 0;
+			}
+			showSlide2(currentSlide2);
+			}
+
+			// Set the interval for slide transitions (in milliseconds)
+			var slideInterval2 = setInterval(nextSlide2, 3000);
+		  </script>
+		  	
+			  <script>
+				// JavaScript to automatically transition slides
+				var slides3 = document.getElementsByClassName("slide3");
+				var currentSlide3 = 0;
+			  
+				function showSlide3(n) {
+				  // Hide all slides
+				  for (var i = 0; i < slides3.length; i++) {
+					slides3[i].style.display = "none";
+				  }
+			  
+				  // Display the specified slide
+				  slides3[n].style.display = "block";
+				}
+			  
+				function nextSlide3() {
+				  currentSlide3++;
+				  if (currentSlide3 >= slides3.length) {
+					currentSlide3 = 0;
+				  }
+				  showSlide3(currentSlide3);
+				}
+			  
+				// Set the interval for slide transitions (in milliseconds)
+				var slideInterval3 = setInterval(nextSlide3, 3000);
+			  
+				// Show the initial slide
+				showSlide3(currentSlide3);
+			  </script>
+			  
 		<div id="footer">
 			<div>
 				<ul class="navigation">
 					<li >
 						<a href="index.html">Home</a>
 					</li>
+
+					<li>
+						<a href="blog.html">Blog</a>
+					</li>
 					<li class="active">
 						<a href="service.html">Service</a>
-					</li>
-					<li>
-						<a href="blog.html">Blogs</a>
 					</li>
 					<li>
 						<a href="room.html">Rooms</a>
@@ -101,10 +395,9 @@
 					</li>
 				</ul>
 				<div id="connect">
-					<a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT" target="_blank" class="pinterest"></a> 
-					<a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT" target="_blank" class="facebook"></a> 
-					<a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT" target="_blank" class="twitter"></a> 
-					<a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT" target="_blank" class="googleplus"></a>				
+					<a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT"><img src="images/fb.png" alt=""  id="fb"></a> 
+                     <a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT"><img src="images/tiktok.png" alt="" id="tiktok"></a> 
+                     <a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT"><img src="images/ig.png" alt="" id="ig"></a> 				
 				</div>
 			</div>
 			<p>
