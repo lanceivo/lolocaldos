@@ -1,252 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
 
-  <title>LOLO-CALDOS-Gallery</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+if (isset($_POST["send"])) {
+    $email = $_POST["email"];
+    $name = $_POST["name"];
+    $subject = $_POST["subject"];
+    // $msg = $_POST["message"];
 
-  <link rel="icon" type="png" href="assets/img/logo.png">
+    $msg = '
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p> Dear <strong> ' . $name . ' !</strong></p>
+        <p>Thank you for your interest in our business resort! We are here to answer any questions you have about our facilities and services. 
+            <br>If you have any suggestions on how we can improve, we would love to hear from you. Looking forward to hearing back from you soon.
+        </p>
+        <br><br>
+        Have the day you deserve,<br>
+        <strong>Lolo Caldos Farmville Resort.</strong>
+        <br><br>
+    </body>
+    </html>
+    ';
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.hostinger.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'contact@lolocaldos.tech';
+    $mail->Password = 'Lance@15';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    $mail->setFrom('contact@lolocaldos.tech', 'Lolo Caldos Farmville Resort');
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    $mail->addAddress($email);
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    $mail->isHTML(true);
 
+    $mail->Subject = $subject;
+    $mail->Body = $msg;
+    $mail->send();
 
-</head>
+    $email2 = $_POST["email"];
+    $name2 = $_POST["name"];
+    $subject2 = $_POST["subject"];
+    $messages2 = $_POST["message"];
 
-<body>
+    $msg2 = '
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p> FROM: ' . $name2 . ' </p><br>
+        <p><strong> Subject: </strong>' . $subject2 . '</p>
+        <br>
+        <p><strong> Message of the Sender: </strong>' . $messages2 . '
+        </p>
+        <br><br>
+        Have the day you deserve,<br>
+        <strong>Lolo Caldos Farmville Resort.</strong>
+        <br><br>
+    </body>
+    </html>
+    ';
+    $mail2 = new PHPMailer(true);
+    $mail2->isSMTP();
+    $mail2->Host = 'smtp.gmail.com';
+    $mail2->SMTPAuth = true;
+    $mail2->Username = 'samsonlance1@gmail.com';
+    $mail2->Password = 'yegtrkpoqwxcuzjo';
+    $mail2->SMTPSecure = 'tls';
+    $mail2->Port = 587;
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
+    // $mail2->setFrom('samsonlance1@gmail.com', 'Lolo Caldos Farmville Resort');
 
-      <h1 class="logo"><a href="index.html">LOLO CALDOS</a></h1>
-    
+    $mail2->addAddress('samsonlance1@gmail.com');
+    $mail2->isHTML(true);
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a  href="index.html">Home</a></li>
-          <li><a href="service.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a class="active" href="gallery.html">Gallery</a></li>
-          <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Login</a></li>
-             
-              <li><a href="#">Register</a></li>
-             
-            </ul>
-          </li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Gallery</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Gallery</li>
-          </ol>
-        </div>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="gallery-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-home">POOLS</li>
-              <li data-filter=".filter-beach">COTTAGES</li>
-              <li data-filter=".filter-vacation">ACTIVITES</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row gallery-container">
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-home">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/pools-1.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>Public Swimming Pools</h4>
-                <p>POOLS</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/pools-1.png" class="glightbox" title="Public Swimming Pools- For Adult and Children"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-vacation">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/activities-2.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>BILLIARDS</h4>
-                <p>ACTIVITES</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/activities-2.png" class="glightbox" title="BILLIARDS"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-home">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/pools-2.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>Private Swimming Pool</h4>
-                <p>POOLS</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/pools-2.png" class="glightbox" title="Private Swimming Pool"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-beach">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/cottage-2.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>COTTAGE-CONRETE</h4>
-                <p>COTTAGES</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/beach-2.jpg" class="glightbox" title="COTTAGE CONCRETE"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-vacation">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/activities-1.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>BASKETBALL COURT</h4>
-                <p>ACTIVITES</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/activities-1.png" class="glightbox" title="BASKETBALL COURT"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-home">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/pool-3.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>SPECIAL SWIMMING POOLS</h4>
-                <p>POOLS</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/pool-3.png" class="glightbox" title="SPECIAL SWIMMING POOLS"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-beach">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/cottage-1.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>NIPA HUT</h4>
-                <p>COTTAGES</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/cottage-1.png" class="glightbox" title="COTTAGE-NIPA HUT"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-beach">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/cottage-3.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>COTTAGE-BENCH</h4>
-                <p>COTTAGES</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/cottage-3.png" class="glightbox" title="COTTAGE-BENCH"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 gallery-item filter-vacation">
-            <div class="gallery-wrap">
-              <img src="assets/img/gallery/activities-3.png" class="img-fluid" alt="">
-              <div class="gallery-info">
-                <h4>KARAOKE</h4>
-                <p>ACTIVITES</p>
-                <div class="gallery-links">
-                  <a href="assets/img/gallery/activities-3.png" class="glightbox" title="FREE KARAOKE"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Gallery Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>LOLO CALDOS</h3>
-      <p>Experience the warm hospitality and welcoming atmosphere that defines Lolo Caldos Resort. Allow us to create cherished memories and make your stay an unforgettable one. Welcome to a world of luxury, serenity, and unparalleled beauty. Welcome to Lolo Caldos Resort, your home away from home.</p>
-      <div class="social-links">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/LOLOCALDOSFARMVILLERESORT" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>Lolo Caldos Farmville Resort</span></strong>.
-      </div>
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
- 
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
- 
-  <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+    $mail2->Subject = $subject2;
+    $mail2->Body = $msg2;
+    $mail2->send();
+    echo '<script>
+  window.alert("Message Inquiry Sent");
+  window.location.href ="contact.html";
+  </script>';
+} else {
+  echo '<script>
+  window.alert("Message Failed to sent");
+  window.location.href ="contact.html";
+  </script>';
+}
+?>
