@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+  #rate{
+    border-radius: 10%;
+     background-color:blue;
+      width:155px; height:8%; 
+      color:aliceblue; 
+      text-align:center;
+      padding-top: 5px;
+  }
+</style>
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -38,17 +47,15 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a  href="index.html">Home</a></li>
-          <li><a class="active" href="service.html">Services</a></li>
+          <li><a class="active" href="service.php">Services</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Register</a></li>
-             
+              <li><a href="login_register.html">Login</a></li>  
             </ul>
           </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -74,12 +81,23 @@
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Story Intro Section ======= -->
+    <?php
+            require 'connection.php';
+            $query = "SELECT * FROM tbprivate";
+            $result = mysqli_query($db_connection,$query);
+            ?>
     <section id="story-intro" class="story-intro">
       <div class="container">
-
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/private-service.png" class="img-fluid" alt="">
+          <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+      <?php
+          $imagePath = $row['img_file'];
+          $imageWidth = $row['img_width'];
+          $imageHeight = $row['img_height'];
+          ?>
+        <img src="<?php echo $imagePath; ?>" class="img-fluid" alt="" width="<?php echo $imageWidth; ?>px" height="<?php echo $imageHeight; ?>px">
+      <?php } ?>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
             <h3>PRIVATE SERVICES</h3>
@@ -87,16 +105,21 @@
               Enjoy Exclusive Pool Experiences
 							At our private pool, we offer a range of private services designed to provide you with a memorable and exclusive experience. Here are our rates and packages:
             </p>
+            <?php
+            require 'connection.php';
+            $query = "SELECT tbprivate.packageA,tbprivate.packageB,tbprivate.packageC, tbprivate.price FROM tbprivate";
+            $result = mysqli_query($db_connection,$query);
+            $row = mysqli_fetch_assoc($result);
+            ?>
             <ul>
-              <li style="text-align: justify;"><i class="bi bi-check-circled"></i> Package A: Large room with air conditioning Maximum capacity: 25-30 people</li>
-              <li style="text-align: justify;"><i class="bi bi-check-circled"></i> Package B: Large Villa with air conditioning, 1 Couples Room with air conditioning and private toilet & bath
-                Maximum capacity: 20-25 people</li>
-              <li style="text-align: justify;"><i class="bi bi-check-circled"></i> Package C: Large Villa with air-conditioned toilet, 2 Rooms with air conditioning and private toilet & bath
-                Maximum capacity: 25-30 people</li>
+              <li style="text-align: justify;"><i class="bi bi-check-circled"></i> Package A: <?php echo $row['packageA']; ?></li>
+              <li style="text-align: justify;"><i class="bi bi-check-circled"></i> Package B: <?php echo $row['packageB']; ?></li>
+              <li style="text-align: justify;"><i class="bi bi-check-circled"></i> Package C: <?php echo $row['packageC'];?></li>
             </ul>
             <p>
               Whether you're looking for a daytime getaway or an overnight retreat, our private services offer the perfect setting for relaxation and enjoyment. Experience the exclusivity and comfort of our private pool facilities as you create lasting memories with your group.
             </p>
+            <p id="rate"> Rate: Php <?php echo $row['price'];?></p>
           </div>
         </div>
 
@@ -104,23 +127,40 @@
     </section><!-- End Story Intro Section -->
 
     <!-- ======= Featured Members Section ======= -->
+    <?php
+            require 'connection.php';
+            $query = "SELECT * FROM tbroom";
+            $result = mysqli_query($db_connection,$query);
+            ?>
     <section id="featured-members" class="featured-members">
       <div class="container">
-
         <div class="row content">
           <div class="col-lg-6">
-            <img src="assets/img/members/roomservice.png" class="img-fluid" alt="">
+          <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+      <?php
+          $imagePath = $row['img_file'];
+          $imageWidth = $row['img_width'];
+          $imageHeight = $row['img_height'];
+          ?>
+             <img src="<?php echo $imagePath; ?>" class="img-fluid" alt="" width="<?php echo $imageWidth; ?>px" height="<?php echo $imageHeight; ?>px">
+      <?php } ?>
           </div>
           <div class="col-lg-6 pt-3 pt-lg-0">
             <h3>ROOM SERVICES</h3>
             <p class="fst-italic">
               At our resort, we take pride in providing exceptional room service to ensure that our guests have a comfortable and relaxing stay. Our dedicated team of professionals is committed to delivering a seamless experience right to the doorstep of our guests' rooms.            </p>
+              <?php
+            require 'connection.php';
+            $query = "SELECT tbroom.villaA,tbroom.villaB,tbroom.villaC,tbroom.price FROM tbroom";
+            $result = mysqli_query($db_connection,$query);
+            $row = mysqli_fetch_assoc($result);
+            ?> 
             <ul>
-              <li><i class="bi bi-check"></i> Villa A - 7 to 8 PAX: 1 Air-Conditioned w/Television, 2 Double-size Bed, 1 Double-deck Bed,Toiler & Bath,Dining Area(1 Table & 2 Chairs Inside),Refrigerator,Stand Fan,Electric Water heater & Free</li>
-              <li><i class="bi bi-check"></i> Villa B - 7 to 8 PAX: 1 Air-Conditioned w/Television, 2 Double-size Bed, 1 Double-deck Bed,Toiler & Bath,Dining Area(1 Table & 2 Chairs Inside),Refrigerator,Stand FanElectric Water heater & Free</li>
-              <li><i class="bi bi-check"></i> Villa C - COUPLE ROOM:  1 Air-conditioned Room w/ Television,1 King-size Bed,2 Extra Matress (Optional),Toilet & Bath,Dining Area (1 Table & 2 Chairs inside),Dining Area (1 Table & 2 Chairs inside),Stand Fan,Electric Water Heater & Free Giller</li>
-
+              <li><i class="bi bi-check"></i> Villa A - 7 to 8 PAX: <?php echo $row['villaA']; ?></li>
+              <li><i class="bi bi-check"></i> Villa B - 7 to 8 PAX: <?php echo $row['villaB']; ?></li>
+              <li><i class="bi bi-check"></i> Villa C - COUPLE ROOM: <?php echo $row['villaC']; ?></li>
             </ul>
+            <p id="rate"> Rate: Php <?php echo $row['price'];?></p>
           </div>
         </div>
 
