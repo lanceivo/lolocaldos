@@ -226,8 +226,8 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Ivo Min</h4>
-                <span>Accountant</span>
+                <h4>Vivencio M. Calma</h4>
+                <span>Chief Executive Officer</span>
                 <p>Sint qui cupiditate. Asperiores fugit impedit aspernatur et mollitia. Molestiae qui placeat labore assumenda id qui nesciunt quo reprehenderit. Rem dolores similique quis soluta culpa enim quia ratione ea.</p>
               </div>
             </div>
@@ -236,7 +236,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/members/ceo.png" class="img-fluid" alt="">
+                <img src="assets/img/members/finance.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -245,8 +245,8 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Ivo Min</h4>
-                <span>Marketing</span>
+                <h4>Felicisima S. Calma</h4>
+                <span>Finace</span>
                 <p>Aut ex esse explicabo quia harum ea accusamus excepturi. Temporibus at quia quisquam veritatis impedit. Porro laborum voluptatum sed necessitatibus a saepe. Deserunt laborum quasi consequatur voluptatum iusto sint qui fuga vel. Enim eveniet sed quibusdam rerum in. Non dicta architecto consequatur quo praesentium nesciunt.</p>
               </div>
             </div>
@@ -255,7 +255,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/members/ceo.png" class="img-fluid" alt="">
+                <img src="assets/img/members/secretary.png" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -264,8 +264,8 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Ivo Min</h4>
-                <span>Financing</span>
+                <h4>Jessa Mhae G. Calma</h4>
+                <span>Secretary / Cashier</span>
                 <p>Amet labore numquam corrupti est. Nostrum amet voluptas consectetur dolor voluptatem architecto distinctio consequuntur eligendi. Quam impedit enim aut nesciunt aut dicta quam exercitationem. Reprehenderit exercitationem magnam. Ullam similique ut voluptas totam nobis porro accusamus nulla omnis.</p>
               </div>
             </div>
