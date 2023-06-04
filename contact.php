@@ -125,7 +125,14 @@
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>       
+                <select class="form-control" name="subject" id="subject" required>
+                  <option value="" selected disabled>Select a Subject</option>
+                  <option value="General Inquiry">Reservation Inquiry</option>
+                  <option value="Product Support">Services Support</option>
+                  <option value="Feedback or Suggestions">Feedback or Suggestions</option>
+                  <option value="Partnership Opportunity">Partnership Opportunity</option>
+                  <option value="Job Application">Job Application</option>
+                </select>
               </div>
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>        

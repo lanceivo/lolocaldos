@@ -125,7 +125,7 @@
                         <input type="text" name="servicerate" id="servicerate" class="form-control" value="" placeholder="Update Your Private Service Rate">
                         </div>
                         <div class="col-md-4">
-                            <input type="file" name="serviceImage" id="serviceImage" class="form-control-file">
+                            <input type="file" name="serviceImage" id="serviceImage" class="form-control-file" accept="image/jpeg, image/png">
                             <label class="form-control-file" style="color:blue"> Image Upload Should be Width:1026px | Height:768px</label>
                         </div>
                     </div>
@@ -180,7 +180,7 @@
                         <input type="text" name="roomrate" id="servicerate" class="form-control" value="" placeholder="Update Your Room Service Rate">
                         </div>
                         <div class="col-md-4">
-                            <input type="file" name="roomImage" id="roomImage" class="form-control-file">
+                            <input type="file" name="roomImage" id="roomImage" class="form-control-file" accept="image/jpeg, image/png">
                             <label class="form-control-file" style="color:blue"> Image Upload Should be Width:800px | Height:533px</label>
                         </div>
                     </div>
