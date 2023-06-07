@@ -27,16 +27,39 @@ function sendemail($name, $email, $subject) {
         <html lang="en">
         <head>
             <meta charset="UTF-8">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    line-height: 1.5;
+                    color: #333;
+                    margin: 0;
+                    padding: 20px;
+                }
+                
+                p {
+                    margin-bottom: 10px;
+                }
+                
+                strong {
+                    font-weight: bold;
+                }
+                
+                .signature {
+                    margin-top: 30px;
+                }
+                
+                .signature strong {
+                    font-size: 18px;
+                }
+            </style>
         </head>
         <body>
-            <p> Dear <strong> ' . $name . ' !</strong></p>
-            <p>Thank you for your interest in our business resort! We are here to answer any questions you have about our facilities and services. 
-                <br>If you have any suggestions on how we can improve, we would love to hear from you. Looking forward to hearing back from you soon.
-            </p>
+            <p>Dear <strong>' . $name . '!</strong></p>
+            <p>Thank you for your interest in our business resort! We are here to answer any questions you have about our facilities and services.</p>
+            <p>If you have any suggestions on how we can improve, we would love to hear from you. Looking forward to hearing back from you soon.</p>
             <br><br>
-            Have the day you deserve,<br>
-            <strong>Lolo Caldos Farmville Resort.</strong>
-            <br><br>
+            <p class="signature">Have the day you deserve,</p>
+            <p class="signature"><strong>Lolo Caldos Farmville Resort.</strong></p>
         </body>
         </html>
     ';
