@@ -75,7 +75,7 @@
                                               <input type="email" name="email" class="form-style" placeholder="Email Address" value="<?php if(isset($_GET['email'])){echo $_GET['email'];}?>">
                                               <i class="input-icon uil uil-at"></i>
                                           </div>
-                                          <div class="form-group">
+                                          <div class="form-group" style="margin-top: 3%;">
                                               <input type="text" name="new_password" class="form-style" placeholder="Create new password">
                                               <i class="input-icon uil uil-at"></i>
                                           </div>

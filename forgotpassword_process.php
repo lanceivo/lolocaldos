@@ -57,7 +57,7 @@ function send_password_reset($get_email,$token){
             <p>Enter this code:  <strong>$token</strong></p>
             <p>Code to Reset your password.</p>
             <br><br>
-                <a href='http://localhost/lolocaldos/createpassword.php?token=$token&email=$get_email'>Verify Here</a>
+                <a href='https://lolocaldos.tech/createpassword.php?token=$token&email=$get_email'>Verify Here</a>
             </body>
         </html>
     ";
